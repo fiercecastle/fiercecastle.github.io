@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script async src="https://arc.io/widget.min.js#JDaXG9hz"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="icon" type="image/x-icon" href="https://ccsd.instructure.com/favicon.ico" />
+    <link rel="stylesheet" href="damp/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<body>
+    <div class="container">
+        <button id="apollo" onclick="window.location.href='https://io.mathland.cf'">Apollo</button>
+        <button id="fierce-castle" disabled>Fierce Castle</button>
+    </div>
+    <script src="damp/scripts.js"></script>
+    <script>
+document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+        const disabledButtons = document.querySelectorAll('button:disabled');
+        disabledButtons.forEach(button => {
+            button.style.opacity = '0.5';
+        });
+    }, 1500);
+});
+    </script>
+     <script>
+    if (window.location.hostname === 'soursmp.cf') {
+      window.location.href = 'https://mathland.cf';
+    }
+  </script>
+</body>
+</html>

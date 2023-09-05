@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script async src="https://arc.io/widget.min.js#JDaXG9hz"></script>
+  <meta charset="UTF-8">
+  <title>My Drive - Google Drive</title>
+  <link rel="stylesheet" href="int/design/styles.css">
+  <link rel="icon" type="image/x-icon" href="https://ssl.gstatic.com/images/branding/product/1x/drive_2020q4_32dp.png" />
+  <style>
+    .popup {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    .popuptext {
+      visibility: hidden;
+      width: 160px;
+      background-color: #555;
+      color: #fff;
+      text-align: center;
+      border-radius: 6px;
+      padding: 8px;
+      position: absolute;
+      z-index: 1;
+      bottom: 125%;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .popup:hover .popuptext {
+      visibility: visible;
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Apollo v2.06 (Beta)</h1>
+    <a href="https://discord.gg/ThBKJUuw6u"><img src="img/gg2.png" alt="ggl" title="Join the Discord!" class="gg-logo"></a>
+    <button id="settings-button">Settings</button>
+  </header>
+  <div class="container">
+    <aside class="sidebar">
+      <h2>Apollo</h2>
+      <nav>
+        <ul>
+          <li><button class="fill" onclick="navigate('int/uv')">Ultraviolet</button></li>
+          <li><button class="fill" onclick="navigate('int/flow-os')">Flow OS</button></li>
+          <li><button class="fill" onclick="navigate('int/gpt-v2')">GPT v2</button></li>
+          <li><button class="fill" title="Sometimes doesn't work." onclick="navigate('int/radon.html')">Radon</button></li>
+          <li><button class="fill" onclick="navigate('int/craft-further')">Eaglercraft</button></li>
+        </ul>
+      </nav>
+    </aside>
+    <main>
+      <p>I am currently busy and resources won't be updated for the time-being.</p>
+      <div></div>
+      <changelog>
+        <h3>8/9/23</h3> Posted by fierce <text class="backtick" id="time-difference-1"></text>
+        <p>- Eaglercraft returns!</p>
+        <p>- gpt v2</p>
+        <p>- flow os fix</p>
+        <p>- radon added back</p>
+        <h3>8/10/23</h3> Posted by fierce <text class="backtick" id="time-difference-2"></text>
+        <p>- added uv</p>
+        <p>- changed flow os database</p>
+      </changelog>
+      <script>
+if (window.location.hostname !== 'crazy.mathland.cf') {
+  window.location.href = 'https://crazy.mathland.cf';
+}
+
+function navigate(url) {
+  window.location.href = url;
+}
+        </script>
+      <script src="int/design/script.js"></script>
+      <script defer src="int/design/log/webhook.js"></script>
+      <script src="int/design/time.js"></script> 
+    </main>
+  </div>
+</body>
+</html>
+
+<script>
+  // Variable to store the settings window
+  let settingsWindow = null;
+
+  // Event listener for the settings button
+  document.getElementById('settings-button').addEventListener('click', () => {
+    if (settingsWindow && !settingsWindow.closed) {
+      // Close the settings window if it's already open
+      settingsWindow.close();
+      settingsWindow = null;
+    } else {
+      // Open the settings window
+      settingsWindow = window.open('', 'Settings', 'width=300,height=200');
+      const toggle = document.createElement('input');
+      toggle.type = 'checkbox';
+      toggle.id = 'test-toggle';
+      settingsWindow.document.body.appendChild(toggle);
+      const label = document.createElement('label');
+      label.for = 'test-toggle';
+      label.textContent = 'Test';
+      settingsWindow.document.body.appendChild(label);
+      
+      // Load the saved checkbox state from localStorage
+      const savedToggleState = localStorage.getItem('toggleState');
+      if (savedToggleState !== null) {
+        toggle.checked = JSON.parse(savedToggleState);
+      }
+      
+      updateButtonEventListeners();
+    }
+  });
+
+  // Save toggle state and close settings window on unload
+  window.onbeforeunload = () => {
+    if (settingsWindow && !settingsWindow.closed) {
+      const toggle = settingsWindow.document.getElementById('test-toggle');
+      if (toggle) {
+        localStorage.setItem('toggleState', JSON.stringify(toggle.checked));
+      }
+      settingsWindow.close();
+    }
+  };
+
+  // Update button event listeners
+  function updateButtonEventListeners() {
+    const buttons = document.querySelectorAll('li button.fill');
+    buttons.forEach(button => {
+      button.removeEventListener('click', buttonClickListener);
+      button.addEventListener('click', buttonClickListener);
+    });
+  }
+
+  // Close settings window when clicking a button
+  function buttonClickListener() {
+    if (settingsWindow && !settingsWindow.closed) {
+      settingsWindow.close();
+      settingsWindow = null;
+    }
+  }
+</script>

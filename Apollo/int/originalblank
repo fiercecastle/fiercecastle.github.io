@@ -1,0 +1,60 @@
+<html>
+  <head>
+    <title>Dashboard</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <script>
+      (function() {
+        window.onbeforeunload = function() {
+          return "Not this time.";
+        };
+      })();
+    </script>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="https://ccsd.instructure.com/favicon.ico" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="design/styles.css" rel="stylesheet" />
+    <link href="design/css" rel="stylesheet" />
+  </head>
+  <body>
+    <button class="fill">Boot</button>
+    <script>
+      var url = "https://go.school-learing.tk/";
+      var win;
+      document.querySelector('button').onclick = function() {
+        if (win) {
+          win.focus();
+        } else {
+          win = window.open();
+          win.document.body.style.margin = '100%px';
+          win.document.body.style.height = '100%vh';
+          win.document.title = "Dashboard";
+          var iframe = win.document.createElement('iframe');
+          iframe.style.border = 'none';
+          iframe.style.width = '100%';
+          iframe.style.height = '100%';
+          iframe.style.margin = '0';
+          iframe.src = url;
+          iframe.onload = function() {
+            var msg = iframe.contentDocument.querySelector('.msg');
+            msg.parentNode.removeChild(msg);
+          };
+          win.document.body.appendChild(iframe);
+          (function() {
+            win.onbeforeunload = function() {
+              return "Not this time.";
+            };
+          })();
+        }
+        document.querySelector('button').style.background = 'grey';
+        document.querySelector('button').innerHTML = "you booted already";
+      };
+    </script>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+  </body>
+</html>

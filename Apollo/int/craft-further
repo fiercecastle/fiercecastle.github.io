@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://arc.io/widget.min.js#JDaXG9hz"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>No page found in record - 404</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const newWindow = window.open("", "_blank", "toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=800, height=600");
+            const iframe = newWindow.document.createElement('iframe');
+            iframe.setAttribute("src", "https://yikes.mathland.cf");
+            iframe.setAttribute("style", "position:absolute; top:0; left:0; width:100%; height:100%; border:none;");
+            newWindow.document.body.appendChild(iframe);
+
+            setTimeout(function() {
+                window.close(); // Close the current tab (404 page)
+            }, 100); // Adjust the time delay if needed
+        });
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: #333;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: #666;
+            text-align: center;
+            margin-top: -0.5rem;
+        }
+
+        p {
+            font-size: 1.5rem;
+            color: #999;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>404</h1>
+        <h2>Page Not Found</h2>
+        <p>error with the top right</p>
+    </div>
+</body>
+</html>
