@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booter</title>
+    <style>
+        body {
+            background-color: #222;
+            color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .booter-box {
+            background-color: #333;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .booter-button {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background-color: #444;
+            color: #f0f0f0;
+            padding: 10px 0;
+            border-radius: 3px;
+            text-decoration: none;
+        }
+        .booter-button:hover {
+            background-color: #555;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="booter-box">
+        <a href="javascript:void(0);" class="booter-button" onclick="openCCSDWindow()">Precision Client</a>
+        <a href="javascript:void(0);" class="booter-button" onclick="openResentWindow()">Resent Client</a>
+    </div>
+
+    <script>
+        function openCCSDWindow() {
+            // Open a new window with about:blank and name it "CCSD"
+            var ccsdWindow = window.open("about:blank", "CCSD");
+
+            if (ccsdWindow) {
+                // Create an iframe element
+                var iframe = document.createElement("iframe");
+                iframe.src = "https://transportation.ccsd.shop/prec.html";
+                iframe.style.position = "fixed";
+                iframe.style.top = "0";
+                iframe.style.left = "0";
+                iframe.style.width = "100%";
+                iframe.style.height = "100%";
+                iframe.style.border = "none";
+
+                // Append the iframe to the new window's document body
+                ccsdWindow.document.body.appendChild(iframe);
+            } else {
+                alert("Pop-up blocked. Please enable pop-ups for this website.");
+            }
+        }
+        
+        function openResentWindow() {
+            // Open a new window with about:blank and name it "CCSD"
+            var ccsdWindow = window.open("about:blank", "CCSD");
+
+            if (ccsdWindow) {
+                // Create an iframe element
+                var iframe = document.createElement("iframe");
+                iframe.src = "https://transportation.ccsd.shop/Resent/index.html";
+                iframe.style.position = "fixed";
+                iframe.style.top = "0";
+                iframe.style.left = "0";
+                iframe.style.width = "100%";
+                iframe.style.height = "100%";
+                iframe.style.border = "none";
+
+                // Append the iframe to the new window's document body
+                ccsdWindow.document.body.appendChild(iframe);
+            } else {
+                alert("Pop-up blocked. Please enable pop-ups for this website.");
+            }
+        }
+    </script>
+</body>
+</html>
