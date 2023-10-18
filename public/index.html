@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
   <script async src="https://arc.io/widget.min.js#NSSpDiTt"></script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8048595599330262"
-     crossorigin="anonymous"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8048595599330262" crossorigin="anonymous"></script>
   <meta charset="UTF-8">
   <title>My Drive - Google Drive</title>
   <link rel="stylesheet" href="int/design/styles.css">
@@ -12,29 +11,40 @@
 <body>
     <script>
     function navigate(url) {
-  window.location.href = url;
-}
-    function openeg() {
-            var ccsdWindow = window.open("about:blank#craft-booter", "CCSD2");
+        window.location.href = url;
+    }
 
-            if (ccsdWindow) {
-                var iframe = document.createElement("iframe");
-                iframe.src = "https://newsroom.ccsd.shop/int/mine/index.html";
-                /*iframe.style.position = "fixed";*/
-                iframe.style.top = "0";
-                iframe.style.left = "0";
-                iframe.style.width = "100%";
-                iframe.style.height = "100%";
-                iframe.style.border = "none";
-                ccsdWindow.document.body.appendChild(iframe);
-            } else {
-                alert("Pop-up blocked. Please enable pop-ups for this website.");
-            }
+    function openeg() {
+        var ccsdWindow = window.open("about:blank#craft-booter", "CCSD2");
+
+        if (ccsdWindow) {
+            var iframe = document.createElement("iframe");
+            iframe.src = "https://newsroom.ccsd.shop/int/mine/index.html";
+            iframe.style.top = "0";
+            iframe.style.left = "0";
+            iframe.style.width = "100%";
+            iframe.style.height = "100%";
+            iframe.style.border = "none";
+            ccsdWindow.document.body.appendChild(iframe);
+        } else {
+            alert("Pop-up blocked. Please enable pop-ups for this website.");
         }
-        </script>
+    }
+
+    function showDiscordWidget() {
+        var iframe = document.getElementById("discord-widget");
+        iframe.style.display = "block";
+    }
+
+    function hideDiscordWidget() {
+        var iframe = document.getElementById("discord-widget");
+        iframe.style.display = "none";
+    }
+    </script>
   <header>
     <h1>Apollo v2.06 (Beta)</h1>
-    <a href="https://discord.gg/ThBKJUuw6u"><img src="img/gg2.png" alt="ggl" title="Join the Discord!" class="gg-logo"></a>
+    <img src="img/gg2.png" alt="ggl" title="Join the Discord!" class="gg-logo" onmouseover="showDiscordWidget()" onmouseout="hideDiscordWidget()">
+    <iframe id="discord-widget" style="display: none; position: absolute; top: 0; left: 0; width: 350px; height: 500px; border: none;" src="https://canary.discord.com/widget?id=1043038651271086161&theme=dark" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
   </header>
   <div class="container">
     <aside class="sidebar">
@@ -68,6 +78,3 @@
   </div>
 </body>
 </html>
-
-
-
