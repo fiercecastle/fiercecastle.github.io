@@ -3,7 +3,7 @@ const path = require('path');
 const fs = require('fs');
 
 const app = express();
-const port = 8080;
+const port = 9001;
 
 // Serve static files from the "public" folder
 app.use(express.static(path.join(__dirname, 'public')));
@@ -20,10 +20,10 @@ app.use((req, res, next) => {
   }
 
   // Check if the URL doesn't start with "about:blank" or "file:"
-/*  if (!req.url.startsWith('about:blank') && !req.url.startsWith('file:')) {
+ if (!req.url.startsWith('about:blank') && !req.url.startsWith('file:')) {
     // Display an alert if the URL doesn't match
     return res.send('<script>alert("Get out of here, idiot.")</script>');
-  }*/
+  }
 
   next();
 });
