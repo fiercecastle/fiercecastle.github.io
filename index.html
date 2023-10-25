@@ -2,15 +2,16 @@
 <html lang="en">
 <head>
   <script>
-  function checkAndRedirect() {
-    const currentURL = window.location.href;
-    if (!currentURL.endsWith('#blank') && currentURL !== 'about:blank' && !currentURL.startsWith('file:')) {
-      alert("Get out of here, idiot.");
-      window.location.href = 'https://mail.google.com';
-    }
+function checkAndRedirect() {
+  const currentURL = window.location.href;
+  if (currentURL !== 'about:blank' && !currentURL.startsWith('file:')) {
+    alert("Get out of here, idiot.");
+    window.location.href = 'https://mail.google.com';
   }
+}
 
-  window.onload = checkAndRedirect;</script>
+window.onload = checkAndRedirect;
+</script>
   <script async src="https://arc.io/widget.min.js#NSSpDiTt"></script>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8048595599330262" crossorigin="anonymous"></script>
   <meta charset="UTF-8">
@@ -29,7 +30,7 @@
 
       if (ccsdWindow) {
         var iframe = document.createElement("iframe");
-        iframe.src = "https://newsroom.ccsd.shop/int/mine/index.html";
+        iframe.src = "https://board.bimbos.dev/int/mine/index.html";
         iframe.style.top = "0";
         iframe.style.left = "0";
         iframe.style.width = "100%";
