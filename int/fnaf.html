@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Video Player with Plyr</title>
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.8/plyr.css">
+    <style>
+        body {
+            background-color: #000; /* Dark background color */
+            margin: 0;
+            padding: 0;
+        }
+        select {
+            background-color: #333; /* Dark background color for the dropdown */
+            color: #fff; /* Text color */
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <video id="player" controls>
+        <source src="https://fiercecastle.com/video/media/fnaf/movie.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div>
+        <label for="quality-select">Quality:</label>
+        <select id="quality-select" onchange="changeQuality()">
+            <option value="144p">144p</option>
+            <option value="240p">240p</option>
+            <option value="360p" selected>360p</option>
+            <option value="480p">480p</option>
+            <option value="720p">720p</option>
+        </select>
+    </div>
+
+    <script src="https://cdn.plyr.io/3.6.8/plyr.js"></script>
+    <script>
+        const player = new Plyr('#player');
+
+        function changeQuality() {
+            const qualitySelect = document.getElementById('quality-select');
+            const selectedQuality = qualitySelect.value;
+
+            // You may provide different video sources for each quality level
+            // For simplicity, we are changing the resolution using a single video source
+            // Adjust the source URL as needed to match your video encoding.
+
+            if (selectedQuality === '144p') {
+                player.source = {
+                    type: 'video',
+                    sources: [
+                        {
+                            src: 'https://fiercecastle.com/video/media/fnaf/movie.mp4',
+                            type: 'video/mp4',
+                            size: 144
+                        }
+                    ]
+                };
+            } else if (selectedQuality === '240p') {
+                // Provide URL for 240p video
+                player.source = {
+                    type: 'video',
+                    sources: [
+                        {
+                            src: 'https://fiercecastle.com/video/media/fnaf/movie.mp4',
+                            type: 'video/mp4',
+                            size: 240
+                        }
+                    ]
+                };
+            } else if (selectedQuality === '360p') {
+                // Provide URL for 360p video
+                player.source = {
+                    type: 'video',
+                    sources: [
+                        {
+                            src: 'https://fiercecastle.com/video/media/fnaf/movie.mp4',
+                            type: 'video/mp4',
+                            size: 360
+                        }
+                    ]
+                };
+            } else if (selectedQuality === '480p') {
+                // Provide URL for 480p video
+                player.source = {
+                    type: 'video',
+                    sources: [
+                        {
+                            src: 'https://fiercecastle.com/video/media/fnaf/movie.mp4',
+                            type: 'video/mp4',
+                            size: 480
+                        }
+                    ]
+                };
+            } else if (selectedQuality === '720p') {
+                // Provide URL for 720p video
+                player.source = {
+                    type: 'video',
+                    sources: [
+                        {
+                            src: 'https://fiercecastle.com/video/media/fnaf/movie.mp4',
+                            type: 'video/mp4',
+                            size: 720
+                        }
+                    ]
+                };
+            }
+        }
+    </script>
+</body>
+</html>
