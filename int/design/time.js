@@ -37,7 +37,7 @@ timeDifferenceElements.forEach((element) => {
 });
 */
 const timeDifferenceElements = [
-  { date: "2023-10-19T18:31:45", id: "time-difference-1" },
+  { date: "2023-10-30T01:05:00", id: "time-difference-1" },
   { date: "2023-08-10T11:20:58", id: "time-difference-2" },
   // Add more objects here as needed
 ];
