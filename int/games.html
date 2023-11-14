@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games</title>
+    <script async src="https://arc.io/widget.min.js#zF5c1y2k"></script>
+    <script>
+        
+        function navigate(url) {
+            window.location.href = url;
+        }
+            function openeg() {
+      var ccsdWindow = window.open("about:blank#craft-booter", "CCSD2");
+
+      if (ccsdWindow) {
+        var iframe = document.createElement("iframe");
+        iframe.src = "https://board.bimbos.dev/int/mine/index.html";
+        iframe.style.top = "0";
+        iframe.style.left = "0";
+        iframe.style.width = "100%";
+        iframe.style.height = "100%";
+        iframe.style.border = "none";
+        ccsdWindow.document.body.appendChild(iframe);
+      } else {
+        alert("Pop-up blocked. Please enable pop-ups for this website.");
+      }
+    }
+    </script>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .category-box {
+            display: flex;
+            justify-content: space-between;
+            width: 80%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            margin: 20px;
+        }
+
+        .category {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 48%;
+            margin: 10px;
+        }
+
+        .category img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .play-button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="category-box">
+        <div class="category" id="cookieClicker">
+            <img src="https://static.wikia.nocookie.net/cookieclicker/images/5/5a/PerfectCookie.png" alt="Cookie Clicker">
+          <h4>Cookie Clicker</h4>
+          <p>**NEW**</p>
+          <button onclick="navigate('cco/index.html')" class="play-button">Play</button>
+        </div>
+
+        <div class="category" id="fnaf">
+            <img src="	https://i.redd.it/eh7b57bqoyp41.jpg
+" alt="FNAF">
+          <h4>Five Nights at Freddy's</h4>
+            <button onclick="navigate('fnaf-game.html')" class="play-button">Play</button>
+        </div>
+    </div>
+
+    <div class="category-box">
+        <div class="category" id="superMario64">
+            <img src="https://static.wikia.nocookie.net/super-mario-64-ds/images/a/a4/13035.png/" alt="Super Mario 64">
+          <h4>Super Mario 64</h4>
+          <button onclick="navigate('sm64/index.html')" class="play-button">Play</button>
+        </div>
+
+        <div class="category" id="eaglercraft">
+            <img src="https://i.ibb.co/XDPkXL3/FC.png" alt="Eaglercraft">
+          <h4>Eaglercraft</h4>
+          <button onclick="navigate('https://board.bimbos.dev/int/mine/index.html')" class="play-button">Play</button>
+        </div>
+    </div>
+
+    <script>
+        function open(game) {
+            // Placeholder function for opening the selected game
+            console.log(`Opening ${game}`);
+            // Add your actual implementation here
+        }
+    </script>
+
+</body>
+</html>

@@ -6,7 +6,7 @@ const app = express();
 const port = 9001;
 
 // Serve static files from the "public" folder
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, './')));
 
 
 // Custom middleware to handle URL redirection and alert
@@ -19,11 +19,7 @@ app.use((req, res, next) => {
     return res.redirect(req.path + '.html');
   }
 
-  // Check if the URL doesn't start with "about:blank" or "file:"
- if (!req.url.startsWith('about:blank') && !req.url.startsWith('file:')) {
-    // Display an alert if the URL doesn't match
-    return res.send('<script>alert("Get out of here, idiot.")</script>');
-  }
+  
 
   next();
 });

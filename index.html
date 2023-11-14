@@ -25,22 +25,6 @@ window.onload = checkAndRedirect;
       window.location.href = url;
     }
 
-    function openeg() {
-      var ccsdWindow = window.open("about:blank#craft-booter", "CCSD2");
-
-      if (ccsdWindow) {
-        var iframe = document.createElement("iframe");
-        iframe.src = "https://board.bimbos.dev/int/mine/index.html";
-        iframe.style.top = "0";
-        iframe.style.left = "0";
-        iframe.style.width = "100%";
-        iframe.style.height = "100%";
-        iframe.style.border = "none";
-        ccsdWindow.document.body.appendChild(iframe);
-      } else {
-        alert("Pop-up blocked. Please enable pop-ups for this website.");
-      }
-    }
 
     function showDiscordWidget() {
       var iframe = document.getElementById("discord-widget");
@@ -67,11 +51,8 @@ window.onload = checkAndRedirect;
           <li><button class="fill" onclick="navigate('int/gpt-v2.html')">GPT v2</button></li>
           <li><button class="fill" title="Sometimes doesn't work." onclick="navigate('int/radon.html')">Radon</button></li>
           <li><button class="fill" title="Sometimes doesn't work." onclick="navigate('int/chatroom.html')">Chatroom</button></li>
-          <li><button href="javascript:void(0);" class="fill" onclick="openeg()">Eaglercraft</button></li>
-          <li><button class="fill" onclick="navigate('int/sm64/index.html')">Super Mario 64</button></li>
-          <li><button class="fill" onclick="navigate('int/cco/index.html')">Cookie Clicker</button></li>
-          <li><button class="new" onclick="navigate('int/fnaf.html')">FNAF Movie</button></li>
-          <li><button class="new" onclick="navigate('int/fnaf-game.html')">FNAF</button></li>
+          <li><button class="fill" onclick="navigate('int/fnaf.html')">FNAF Movie</button></li>
+          <li><button class="new" onclick="navigate('int/games.html')">Games</button></li>
         </ul>
       </nav>
     </aside>
