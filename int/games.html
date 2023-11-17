@@ -6,26 +6,34 @@
     <title>Games</title>
     <script async src="https://arc.io/widget.min.js#zF5c1y2k"></script>
     <script>
-        
         function navigate(url) {
             window.location.href = url;
         }
-            function openeg() {
-      var ccsdWindow = window.open("about:blank#craft-booter", "CCSD2");
 
-      if (ccsdWindow) {
-        var iframe = document.createElement("iframe");
-        iframe.src = "https://board.bimbos.dev/int/mine/index.html";
-        iframe.style.top = "0";
-        iframe.style.left = "0";
-        iframe.style.width = "100%";
-        iframe.style.height = "100%";
-        iframe.style.border = "none";
-        ccsdWindow.document.body.appendChild(iframe);
-      } else {
-        alert("Pop-up blocked. Please enable pop-ups for this website.");
-      }
-    }
+        function Eaglercraft() {
+            var ccsdWindow = window.open("about:blank", "CCSD", "fullscreen=yes");
+
+            if (ccsdWindow) {
+                var iframe = document.createElement("iframe");
+                iframe.src = "https://board.bimbos.dev/int/mine/index.html";
+                iframe.style.position = "fixed";
+                iframe.style.top = "0";
+                iframe.style.left = "0";
+                iframe.style.width = "100%";
+                iframe.style.height = "100%";
+                iframe.style.border = "none";
+
+                ccsdWindow.document.body.appendChild(iframe);
+            } else {
+                alert("Pop-up blocked. Please enable pop-ups for this website.");
+            }
+        }
+
+        document.addEventListener("keydown", function (event) {
+            if (event.key === "5") {
+                openCCSDWindowAndRedirect();
+            }
+        });
     </script>
     <style>
         body {
@@ -43,6 +51,7 @@
 
         .category-box {
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-between;
             width: 80%;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -66,7 +75,7 @@
         }
 
         .play-button {
-            background-color: #4CAF50;
+            background-color: #0496C7;
             color: white;
             border: none;
             padding: 10px 20px;
@@ -81,43 +90,44 @@
 </head>
 <body>
 
-    <div class="category-box">
-        <div class="category" id="cookieClicker">
-            <img src="https://static.wikia.nocookie.net/cookieclicker/images/5/5a/PerfectCookie.png" alt="Cookie Clicker">
-          <h4>Cookie Clicker</h4>
-          <p>**NEW**</p>
-          <button onclick="navigate('cco/index.html')" class="play-button">Play</button>
-        </div>
-
-        <div class="category" id="fnaf">
-            <img src="	https://i.redd.it/eh7b57bqoyp41.jpg
-" alt="FNAF">
-          <h4>Five Nights at Freddy's</h4>
-            <button onclick="navigate('fnaf-game.html')" class="play-button">Play</button>
-        </div>
+<div class="category-box">
+    <div class="category" id="cookieClicker">
+        <img src="https://cdn.bimbos.dev/uploads/974858197b1998d1_cco_fixed.png" alt="Cookie Clicker">
+        <h4>Cookie Clicker</h4>
+        <button onclick="navigate('cco/index.html')" class="play-button">Play</button>
     </div>
 
-    <div class="category-box">
-        <div class="category" id="superMario64">
-            <img src="https://static.wikia.nocookie.net/super-mario-64-ds/images/a/a4/13035.png/" alt="Super Mario 64">
-          <h4>Super Mario 64</h4>
-          <button onclick="navigate('sm64/index.html')" class="play-button">Play</button>
-        </div>
-
-        <div class="category" id="eaglercraft">
-            <img src="https://i.ibb.co/XDPkXL3/FC.png" alt="Eaglercraft">
-          <h4>Eaglercraft</h4>
-          <button onclick="navigate('https://board.bimbos.dev/int/mine/index.html')" class="play-button">Play</button>
-        </div>
+    <div class="category" id="fnaf">
+        <img src="https://i.redd.it/eh7b57bqoyp41.jpg" alt="FNAF">
+        <h4>Five Nights at Freddy's</h4>
+        <button onclick="navigate('fnaf-game.html')" class="play-button">Play</button>
     </div>
 
-    <script>
-        function open(game) {
-            // Placeholder function for opening the selected game
-            console.log(`Opening ${game}`);
-            // Add your actual implementation here
-        }
-    </script>
+    <!-- New Category for Sonic in the Middle at the Top -->
+    <div class="category" id="run" style="order: -1;">
+        <img src="run/run-3.jpg" alt="Run 3">
+        <h4>Run 3</h4>
+        <button onclick="navigate('run/index.html')" class="play-button">Play</button>
+    </div>
+
+    <div class="category" id="superMario64">
+        <img src="https://static.wikia.nocookie.net/super-mario-64-ds/images/a/a4/13035.png/" alt="Super Mario 64">
+        <h4>Super Mario 64</h4>
+        <button onclick="navigate('sm64/index.html')" class="play-button">Play</button>
+    </div>
+
+    <div class="category" id="eaglercraft">
+        <img src="https://i.ibb.co/XDPkXL3/FC.png" alt="Eaglercraft">
+        <h4>Eaglercraft</h4>
+        <button onclick="Eaglercraft()" class="play-button">Play</button>
+    </div>
+
+    <div class="category" id="slope">
+        <img src="https://cdn.bimbos.dev/uploads/a2c9fcd487f6163e_slope.png" alt="Slope">
+        <h4>Slope</h4>
+        <button onclick="navigate('slope/index.html')" class="play-button">Play</button>
+    </div>
+</div>
 
 </body>
 </html>
